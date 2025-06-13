@@ -1,0 +1,33 @@
+@use "funcions" as *;
+
+$laptop: 1440;
+$desktop: 1024px;
+$tablet: 768px;
+$mobile-l: 480px;
+
+
+@mixin customMedia($width) {
+  @media (width <= remF($width)) {
+    @content;
+  }
+}
+
+@mixin customMediaAbove($width) {
+  @media (width > remF($width)) {
+    @content;
+  }
+}
+
+@mixin mobile-l {
+  @media(width <= remF($mobile-l)) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media(width <= remF($desktop)) {
+    @content;
+  }
+}
+
+

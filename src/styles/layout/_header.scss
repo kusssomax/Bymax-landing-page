@@ -1,0 +1,65 @@
+@use "../abstracts/funcions" as *;
+@use "../base/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/media" as *;
+
+.header {
+  background-color: transparent;
+  padding-top: remF(40);
+  margin-bottom: remF(16);
+
+  @include customMedia(1200) {
+    padding-top: remF(25);
+  }
+
+  &__container {
+
+    .line {
+      width: 100%;
+    }
+
+    .container-content {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+
+      .header-nav__list {
+        display: flex;
+        flex-direction: row;
+        gap: clamp(1.563rem, 0.42rem + 5.71vw, 5.563rem);
+        font-family: "Black Han Sans", sans-serif;
+        @include fluid-text(10, 24);
+        transition: all 0.2s ease;
+
+
+        @include customMedia(1200) {
+          gap: remF(50);
+        }
+        @include customMedia(1000) {
+          gap: remF(30);
+        }
+
+        li {
+          a {
+            transition: all 0.2s ease-in;
+          }
+
+          &:hover a {
+            text-shadow: $secondary 0 0 10px;
+          }
+
+          &:active a {
+            color: $secondary;
+            text-shadow: $secondary 0 0 0;
+          }
+        }
+
+        li a {
+          color: $white;
+        }
+
+      }
+    }
+  }
+}

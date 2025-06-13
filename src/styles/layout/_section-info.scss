@@ -1,0 +1,62 @@
+@use "../abstracts/funcions" as *;
+@use "../base/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/media" as *;
+
+
+.section__info {
+  padding: remF(100) 0;
+
+  .section__info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: remF(24);
+
+
+    .info-box2 {
+      align-self: flex-start;
+    }
+
+    .info-box3 {
+      align-self: flex-end;
+    }
+
+    .info-box {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: clamp(3.125rem, 2.839rem + 1.43vw, 4.125rem);
+      padding: remF(14) remF(65);
+      max-width: remF(980);
+      background: $white;
+      border-radius: 10px;
+
+      .info-image-wrapper {
+        display: flex;
+        align-items: center;
+        img {
+        }
+      }
+
+      .info-content-box {
+        h3 {
+          font-family: "Black Han Sans", sans-serif;
+          font-weight: 400;
+          @include fluid-text(14,24);
+          line-height: 200%;
+          text-align: center;
+          color: $primary;
+          margin-bottom: remF(24);
+        }
+
+        p {
+          font-family: "Noto Sans", sans-serif;
+          font-weight: 400;
+          @include fluid-text(12, 20);
+          color: $primary;
+        }
+      }
+    }
+  }
+}

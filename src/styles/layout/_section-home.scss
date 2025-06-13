@@ -1,0 +1,80 @@
+@use "../abstracts/funcions" as *;
+@use "../base/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/media" as *;
+
+
+.section__home {
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    height: 100%;
+    background: url('/public/img/fotofon2.svg') no-repeat center right;
+    background-size: cover;
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: -1;
+  }
+
+  .section__home-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    height: remF(727);
+
+
+    /*img {
+      transition: all 0.2s ease-in;
+      position: absolute;
+      top: 0;
+      right: -130px;
+      z-index: -1;
+    }*/
+
+    .content-block {
+      display: flex;
+      flex-direction: column;
+
+      h1 {
+        font-family: "Black Han Sans", sans-serif;
+        font-weight: 400;
+        @include fluid-text(20, 45);
+        line-height: 200%;
+        color: $white;
+        margin-bottom: 24px;
+        text-align: left;
+        width: clamp(25rem, 18.125rem + 34.38vw, 49.063rem)
+      }
+
+      p {
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 400;
+        @include fluid-text(14, 24);
+        line-height: 150%;
+        color: $white;
+        margin-bottom: 24px;
+        text-align: left;
+        width: clamp(30.625rem, 27.054rem + 17.86vw, 43.125rem);
+
+
+
+        .span__bymax {
+          font-family: "Noto Sans", sans-serif;
+          font-weight: 900;
+          @include fluid-text(22, 32);
+        }
+
+        .span__bymax-y {
+          color: $secondary;
+        }
+      }
+    }
+  }
+}

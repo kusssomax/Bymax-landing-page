@@ -1,0 +1,67 @@
+@use "../abstracts/funcions" as *;
+@use "../base/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/media" as *;
+
+
+.section__about {
+  background-color: $white;
+  padding: remF(86) 0 remF(80) 0;
+
+  h2 {
+    font-family: "Black Han Sans", sans-serif;
+    font-weight: 400;
+    @include fluid-text(26, 36);
+    text-align: center;
+    line-height: 200%;
+    text-transform: uppercase;
+    color: $secondary;
+    margin-bottom: remF(44);
+  }
+
+  .about-wrapper {
+    display: flex;
+    flex-direction: row;
+    column-gap: remF(20);
+
+    .about-image-wrapper {
+      width: 100%;
+
+      img {
+        max-width: 100%;
+        object-fit: cover;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: -40px -40px 0px $primary;
+      }
+    }
+
+    h3 {
+      font-family: "Black Han Sans", sans-serif;
+      font-weight: 400;
+      @include fluid-text(14, 24);
+      line-height: 200%;
+      text-align: center;
+      color: $primary;
+      margin-bottom: remF(24);
+    }
+
+    p {
+      font-family: "Noto Sans", sans-serif;
+      font-weight: 400;
+      @include fluid-text(10, 20);
+      color: $primary
+
+    }
+  }
+
+  .span__bymax {
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 900;
+    @include fluid-text(10, 20);
+  }
+
+  .span__bymax-y {
+    color: $secondary;
+  }
+}

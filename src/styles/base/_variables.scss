@@ -1,0 +1,13 @@
+@use "../abstracts/funcions" as *;
+
+// colors
+$secondary: #1283CF;
+$primary: #283044;
+$white: #ffffff;
+
+$container-width: clamp(20rem, 4.286rem + 78.57vw, 75rem);
+$container-padding-x: #{remF(15)};
+
+$container-width-L: clamp(20rem, 6.875rem + 65.63vw, 85.625rem);
+$container-padding-x-L: #{remF(30)};
+

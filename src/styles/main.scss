@@ -1,0 +1,18 @@
+// abstracts
+@use "abstracts/funcions" as *;
+@use "abstracts/media" as *;
+@use "abstracts/mixins" as *;
+
+//base
+@use "base/base";
+@use "base/fonts";
+@use "base/reset";
+@use "base/variables";
+
+//layout
+@use "layout/header";
+@use "layout/section-home";
+@use "layout/section-about";
+@use "layout/section-info";
+@use "layout/section-help";
+@use "layout/section-head";
