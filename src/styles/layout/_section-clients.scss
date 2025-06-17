@@ -1,0 +1,98 @@
+@use "../abstracts/funcions" as *;
+@use "../base/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/media" as *;
+
+
+.section__clients {
+  padding-top: remF(86);
+  margin-bottom: remF(86);
+
+  h1 {
+    font-family: "Black Han Sans", sans-serif;
+    font-weight: 400;
+    @include fluid-text(28, 36);
+    line-height: 200%;
+    text-transform: uppercase;
+    text-align: center;
+    color: $white;
+    margin-bottom: remF(24);
+  }
+
+  h2 {
+    font-family: "Black Han Sans", sans-serif;
+    font-weight: 400;
+    @include fluid-text(20, 24);
+    line-height: 200%;
+    text-align: center;
+    color: $white;
+    margin-bottom: remF(24);
+  }
+
+  .logo-container {
+    width: 100%;
+    height: auto;
+    padding: remF(20) 0;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    margin-bottom: remF(24);
+
+    .logo-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      gap: remF(10);
+
+      img {
+        max-width: 100px;
+        height: auto;
+        object-fit: contain;
+        flex: 1 1 100px;
+      }
+    }
+  }
+
+  .video-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto auto;
+    grid-gap: remF(10);
+
+    .video-block {
+      width: 100%;
+      background-color: $white;
+      height: 320px;
+
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .vb2 {
+      grid-area: 1 / 2 / 2 / 4;
+    }
+
+    .vb3 {
+      grid-area: 1 / 4 / 2 / 6;
+    }
+
+    .vb5 {
+      grid-area: 2 / 1 / 3 / 3;
+    }
+
+    .vb6 {
+     grid-area: 2 / 3 / 3 / 5;
+    }
+
+    .vb7 {
+      grid-area: 2 / 5 / 3 / 7;
+    }
+
+
+  }
+}

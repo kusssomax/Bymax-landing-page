@@ -1,0 +1,75 @@
+@use "../abstracts/funcions" as *;
+@use "../base/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/media" as *;
+
+
+
+.section__cards {
+  margin-bottom: remF(86);
+
+
+  .section__cards-container {
+    //display: grid;
+    //grid-template-columns: repeat(auto-fit, minmax(100px, remF(350)));
+    //grid-gap: remF(50);
+    //grid-gap: remF(15) 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+    position: relative;
+    padding-top: remF(52);
+
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 200px;
+      width: 100%;
+      background-color: white;
+      z-index: -1;
+    }
+
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      gap: remF(50);
+      background-color: $primary;
+      padding-top: remF(25);
+      flex: 0 3 350px;
+
+      .card-img-wrapper {
+        display: flex;
+        justify-content: center;
+
+        img {
+          max-width: 100%;
+        }
+      }
+
+      .card-content-wrapper {
+
+        p {
+          font-family: "Noto Sans", sans-serif;
+          font-weight: 400;
+          @include fluid-text(14,24);
+          color: $white;
+
+          .span__bymax {
+            font-weight: 700;
+            @include fluid-text(22,32);
+
+            .span__bymax-y {
+              color: $secondary;
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

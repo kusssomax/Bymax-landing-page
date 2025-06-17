@@ -5,6 +5,7 @@
 
 
 .section__head {
+  margin-bottom: remF(86);
 
   .line:first-child {
     margin-bottom: remF(86);
@@ -13,37 +14,71 @@
     margin-top: remF(86);
   }
 
+
   .section__head-container {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-    gap: clamp(9.063rem, 8.42rem + 3.21vw, 11.313rem);
+    height: remF(568);
 
-
-    .head-content {
-      h3 {
-        font-family: "Black Han Sans", sans-serif;
-        font-weight: 400;
-        @include fluid-text(35, 45);
-        line-height: 200%;
-        color: $white;
-      }
-    }
 
     .head-image-wrapper {
-      width: 40.16%;
-      padding: 0 0 42.83% 0;
-      position: relative;
+      width: 37.5%;
       background-color: $white;
+      position: relative;
+      padding: 0 0 42.83% 0;
 
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         position: absolute;
-        top: remF(30);
-        left: remF(50);
+        top: 30px;
+        left: 30px;
       }
     }
+
+    .head-content {
+      display: flex;
+      flex-direction: column;
+      gap: remF(52);
+      max-width: 46.7%;
+
+      h3 {
+        font-family: "Black Han Sans", sans-serif;
+        font-weight: 400;
+        @include fluid-text(35,45);
+        line-height: 200%;
+        color: $white;
+        -webkit-text-stroke: 1px $secondary;
+      }
+
+      p {
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 400;
+        @include fluid-text(14,24);
+        color: $white;
+        line-height: 200%;
+
+        .years {
+          font-family: "Black Han Sans", sans-serif;
+          font-weight: 400;
+          @include fluid-text(14,24);
+          color: $secondary;
+        }
+
+        .quote {
+          font-family: "Black Han Sans", sans-serif;
+          font-weight: 400;
+          @include fluid-text(14,24);
+          color: $white;
+        }
+
+      }
+
+    }
+
   }
+
 }

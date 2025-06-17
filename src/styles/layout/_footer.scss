@@ -1,0 +1,135 @@
+@use "../abstracts/funcions" as *;
+@use "../base/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/media" as *;
+
+
+.footer {
+  padding-block: remF(52);
+  background-color: $white;
+
+  h1 {
+    font-family: "Black Han Sans", sans-serif;
+    font-weight: 400;
+    @include fluid-text(28, 36);
+    line-height: 200%;
+    text-transform: uppercase;
+    color: $primary;
+    margin-bottom: remF(52);
+  }
+
+  .footer__content-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: remF(25);
+
+    .contacts-wrapper {
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        row-gap: remF(35);
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 400;
+        @include fluid-text(20, 24);
+        color: $primary;
+
+        li {
+          padding-left: remF(35);
+          position: relative;
+
+          &:first-child {
+            &::before {
+              content: "";
+              background-image: url("public/icons/location.svg");
+              position: absolute;
+              background-repeat: no-repeat;
+              width: 30px;
+              height: 34px;
+              left: -10px;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+          }
+
+          &:nth-child(2) {
+            &::before {
+              content: "";
+              background-image: url("public/icons/charm_phone.svg");
+              position: absolute;
+              background-repeat: no-repeat;
+              width: 40px;
+              height: 40px;
+              left: -10px;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+          }
+
+          &:nth-child(3) {
+            &::before {
+              content: "";
+              background-image: url("public/icons/zondicons_time.svg");
+              position: absolute;
+              background-repeat: no-repeat;
+              width: 40px;
+              height: 40px;
+              left: -10px;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+          }
+
+          &:nth-child(4) {
+            &::before {
+              content: "";
+              background-image: url("public/icons/mail.svg");
+              position: absolute;
+              background-repeat: no-repeat;
+              width: 40px;
+              height: 40px;
+              left: -10px;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+          }
+
+        }
+      }
+    }
+
+    .social-wrapper {
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+    }
+
+    .navigation-wrapper {
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        row-gap: remF(30);
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 400;
+        @include fluid-text(20, 24);
+        color: $primary;
+
+        li {
+          &:hover {
+            cursor: pointer;
+          }
+          a {
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
+}
